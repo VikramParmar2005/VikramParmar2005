@@ -1,0 +1,55 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Music Playlist Manager</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <div class="container">
+            <h1>Music Playlist Manager</h1>
+
+            <!-- Search bar -->
+            <input type="text" id="searchBar" placeholder="Search for a song..." onkeyup="searchSongs()" aria-label="Search songs">
+
+            <!-- Sort buttons -->
+            <div class="controls">
+                <button onclick="sortPlaylist('alphabet')">Sort Alphabetically</button>
+                <button onclick="sortPlaylist('duration')">Sort by Duration</button>
+            </div>
+
+            <h2>Your Playlist:</h2>
+            <ul id="playlist">
+                <!-- Dynamically generated playlist items will be inserted here -->
+            </ul>
+
+            <!-- Volume Control -->
+            <div class="volume-control">
+                <label for="volume">Volume:</label>
+                <input type="range" id="volume" min="0" max="1" step="0.01" value="0.5" oninput="adjustVolume(this.value)">
+            </div>
+
+            <!-- Loop and Shuffle Controls -->
+            <div class="additional-controls">
+                <button id="loopBtn" onclick="toggleLoop()">Loop: Off</button>
+                <button onclick="shufflePlaylist()">Shuffle</button>
+            </div>
+
+            <!-- New Playlist -->
+            <div class="new-playlist">
+                <input type="text" id="newPlaylistName" placeholder="New Playlist Name">
+                <button onclick="createNewPlaylist()">Create Playlist</button>
+            </div>
+
+            <!-- Saved Playlists -->
+            <h2>Saved Playlists:</h2>
+            <ul id="savedPlaylists">
+                <!-- Dynamically generated saved playlists will be inserted here -->
+            </ul>
+        </div>
+
+        <script src="scripts.js"></script>
+    </body>
+    </html>
